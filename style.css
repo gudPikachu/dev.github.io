@@ -1,0 +1,290 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+
+
+
+/*----------------------------------------------*/
+
+body {
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	height: 100vh;
+
+	background-color: #1F2027;
+	color: #fff;
+	box-sizing: border-box;
+
+	font-family: 'Roboto',  sans-serif;
+	font-size: 18;
+	font-weight: 400;
+
+	background-image:
+    radial-gradient(
+      ellipse at top left,
+      rgba(1,1,1,0.01),
+      rgba(1,1,1,0.5)
+    );
+
+    opacity: 0.85;
+}
+
+/*----------------------------------*/
+/*GRID*/
+#grid-container {
+	width: 100vw;
+	height: 100vh;
+
+	display: grid;
+	grid-template-rows: 1fr 10fr 1fr;
+	grid-template-areas: 
+	"header" 
+	"main" 
+	"footer";
+}
+
+header	{
+	grid-area: header;
+}
+
+#main {
+	grid-area: main;
+}
+
+footer {
+	grid-area: footer;
+}
+
+/*----------------------------------*/
+/*HEADER*/
+
+#main-nav {
+	display: flex;
+	justify-content: flex-end;
+
+	margin-right: 1.5em; 
+}
+
+
+#main-nav ul{
+	display: flex;
+	justify-content: space-between;
+}
+
+nav ul li {
+	display: inline-block;
+
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 12;
+	font-weight: 700;
+
+}
+
+nav ul li a{
+	opacity: 0.7;
+	letter-spacing: 0.1em;
+}
+
+nav ul li a:hover {
+	opacity: 1;
+}
+
+#main-nav ul li {
+	margin: 1em 0.15em;
+}
+
+#main-nav ul li a{
+	display: inline-block;
+	padding: 1em 2em;
+}
+
+#button-work {
+	background-color: #BA24EF;
+	opacity: 1;
+}
+
+#button-work a{
+	opacity: 1;
+}
+
+/*----------------------------------*/
+/*FOOTER*/
+
+#social-nav {
+	display: flex;
+	justify-content: flex-start;
+}
+
+#social-nav ul{
+	display: flex;
+	justify-content: space-between;
+
+	margin-left: 2vh;
+}
+
+#social-nav ul li {
+	display: inline-block;
+	padding: 1.2em;
+	margin: 1.2em;
+
+	font-size: 11;
+	font-weight: 900;
+}
+
+
+/*----------------------------------*/
+/*MAIN*/
+
+#intro {
+	margin-left: 15vw;
+	margin-top: 10vh;
+
+	display: flex;
+	flex-direction: column;
+	align-content: space-around;
+}
+
+#main h2, #main h3 {
+	margin-top: 4vh;
+}
+
+#main h1 {
+	font-size: 88;
+	font-weight: 400;
+}
+
+#main h2 {
+	font-size: 30;
+	font-weight: 300;
+}
+
+#intro a {
+	font-size: 30;
+	font-weight: 300;
+	color: #BA24EF;
+
+	opacity: 1;
+}
+
+/*----------------------------------*/
+/*PHONE*/
+
+@media only screen and (max-width: 600px) {
+
+	#main-nav {
+		width: 100%;
+		justify-content: center;
+		margin-right: 0;
+	}
+
+
+	#main-nav ul{
+		justify-content: space-around;
+	}
+
+	#main-nav ul{
+		width: 100%;
+	}
+
+ 	#social-nav {
+		justify-content: center;
+	}
+	
+	#social-nav ul{
+		justify-content: space-around;
+		margin-left: 0;
+	}
+
+	#main-nav ul li a{
+		display: inline-block;
+		padding: 0.9em 1.6em;
+	}
+
+	#button-work a{
+		padding: 0.9em 1.3em;
+	}
+	/*---------------------------------*/
+	nav ul li {
+		font-size: 15;
+		font-weight: 900;
+	}
+
+	#social-nav ul li {
+		font-size: 13;
+		font-weight: 900;
+	}
+
+	/*---------------------------------*/
+
+	#main h2:last-child {
+		margin-top: 20vh;
+	}
+
+	#main h1 {
+		font-size: 64;
+		font-weight: 700;
+	}
+
+	#main h2 {
+		font-size: 28;
+		font-weight: 300;
+	}
+
+	#main #intro a {
+		font-size: 32;
+		font-weight: 300;
+	}
+}
